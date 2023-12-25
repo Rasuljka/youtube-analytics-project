@@ -15,6 +15,29 @@ class Channel:
         self.__channel_id = channel_id
         self.get_channel_info()
 
+
+    def __str__(self):
+        "Информация о канале"
+        return f'{self.title} ({self.url})'
+
+    def __add__(self, other):
+        "Сложение"
+        return self.subscribers + other.subscribers
+
+    def __sub__(self, other):
+        "Вычитание"
+        return self.subscribers - other.subscribers
+
+    def __gt__(self, other):
+        return self.subscribers > other.subscribers
+
+    def __ge__(self, other):
+        return self.subscribers >= other.subscribers
+
+    def __it__(self, other):
+        return self.subscribers < other.subscribers
+
+
     def print_info(self) -> None:
         """Выводит в консоль информацию о канале."""
         print(json.dumps(self.info, indent=2, ensure_ascii=False))
