@@ -1,7 +1,7 @@
 import os
 from googleapiclient.discovery import build
-from datetime import timedelta
 from isodate import parse_duration
+from datetime import timedelta
 
 
 class PlayList:
